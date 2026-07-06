@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>밤의 갤러리에서 만나요 — 《세 가지 동의》 Gathering Program | 갤러리온도</title>
+<meta name="description" content="《세 가지 동의 Three Agreements》 전시 연계 게더링 프로그램. 작가와 작품 앞에서 대화하고, 루프탑 와인 살롱에서 이야기를 이어가는 네 번의 밤. 갤러리온도.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+  :root{
+    --paper: #f5f1ea;
+    --paper-warm: #efe9df;
+    --ink: #1c1a17;
+    --ink-soft: #4d4841;
+    --ink-faint: #8a8378;
+    --salmon: #c08268;
+    --salmon-pale: #e5c9ba;
+    --line: rgba(28,26,23,0.16);
+    --line-strong: rgba(28,26,23,0.75);
+    --serif: "Noto Serif KR", serif;
+    --eng: "Cormorant Garamond", serif;
+    --sans: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:15px;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:-0.01em;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  @media(min-width:768px){ .container{padding:0 48px;} }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(245,241,234,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    height:60px;
+  }
+  .brand{
+    font-family:var(--eng);
+    font-size:17px;
+    letter-spacing:0.28em;
+    font-weight:500;
+  }
+  .brand small{
+    display:block;
+    font-family:var(--sans);
+    font-size:9px;
+    letter-spacing:0.32em;
+    color:var(--ink-faint);
+    margin-top:-2px;
+  }
+  .header-cta{
+    font-size:12.5px;
+    letter-spacing:0.12em;
+    padding:9px 20px;
+    border:1px solid var(--line-strong);
+    transition:background .25s, color .25s;
+  }
+  .header-cta:hover{background:var(--ink); color:var(--paper);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:72px 0 0;
+    text-align:center;
+  }
+  .hero .program-eng{
+    font-family:var(--eng);
+    font-style:italic;
+    font-size:15px;
+    letter-spacing:0.14em;
+    color:var(--salmon);
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(30px, 6vw, 52px);
+    line-height:1.42;
+    letter-spacing:-0.015em;
+    margin-bottom:26px;
+  }
+  .hero .hero-sub{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:460px;
+    margin:0 auto 36px;
+    line-height:1.9;
+  }
+  .hero-meta{
+    display:flex; justify-content:center; align-items:center;
+    gap:26px;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    color:var(--ink-soft);
+    margin-bottom:44px;
+    flex-wrap:wrap;
+  }
+  .hero-meta .sep{width:1px; height:12px; background:var(--line-strong); opacity:.4;}
+  @media (max-width:520px){
+    .hero-meta{flex-direction:column; gap:9px;}
+    .hero-meta .sep{width:14px; height:1px;}
+  }
+  .btn{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:13.5px;
+    letter-spacing:0.16em;
+    padding:17px 52px;
+    transition:opacity .25s;
+  }
+  .btn:hover{opacity:.82;}
+  .btn-line{
+    display:inline-block;
+    font-size:13.5px;
+    letter-spacing:0.16em;
+    padding:16px 40px;
+    border:1px solid var(--line-strong);
+    transition:background .25s, color .25s;
+  }
+  .btn-line:hover{background:var(--ink); color:var(--paper);}
+
+  .hero-visual{
+    margin-top:64px;
+    position:relative;
+  }
+  .hero-visual img{
+    width:100%;
+    height:clamp(340px, 58vh, 620px);
+    object-fit:cover;
+  }
+  .hero-visual .caption{
+    text-align:right;
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:var(--ink-faint);
+    padding:10px 24px 0;
+  }
+
+  /* ---------- section scaffold ---------- */
+  section{padding:96px 0;}
+  @media(min-width:768px){ section{padding:130px 0;} }
+  .sec-label{
+    display:flex; align-items:baseline; gap:16px;
+    border-top:1px solid var(--line-strong);
+    padding-top:18px;
+    margin-bottom:44px;
+  }
+  .sec-label .no{
+    font-family:var(--eng);
+    font-size:14px;
+    letter-spacing:0.1em;
+  }
+  .sec-label .en{
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ink-faint);
+    text-transform:uppercase;
+  }
+  h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(24px, 4vw, 34px);
+    line-height:1.5;
+    letter-spacing:-0.01em;
+    margin-bottom:28px;
+  }
+  .body-col{max-width:620px;}
+  .body-col p{margin-bottom:18px; color:var(--ink-soft);}
+  .body-col p strong{color:var(--ink); font-weight:600;}
+
+  .pull{
+    font-family:var(--serif);
+    font-size:clamp(18px, 3vw, 23px);
+    line-height:1.8;
+    font-weight:400;
+    color:var(--ink);
+    padding-left:22px;
+    border-left:2px solid var(--salmon);
+    margin:44px 0 0;
+    max-width:560px;
+  }
+
+  /* ---------- intro (about) ---------- */
+  .about-grid{
+    display:grid;
+    gap:48px;
+  }
+  @media(min-width:860px){
+    .about-grid{grid-template-columns:1.15fr 0.85fr; gap:80px; align-items:start;}
+  }
+  .about-side{
+    border-top:1px solid var(--line);
+  }
+  .about-side dl{
+    display:grid;
+    grid-template-columns:96px 1fr;
+    font-size:13.5px;
+  }
+  .about-side dt{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-faint);
+    letter-spacing:0.06em;
+  }
+  .about-side dd{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    color:var(--ink);
+  }
+
+  /* ---------- three agreements ---------- */
+  .agree-wrap{background:var(--paper-warm);}
+  .three-row{
+    display:grid;
+    gap:0;
+    border-top:1px solid var(--line-strong);
+    margin-top:56px;
+  }
+  @media(min-width:768px){ .three-row{grid-template-columns:repeat(3,1fr);} }
+  .three-item{
+    padding:36px 0 40px;
+    border-bottom:1px solid var(--line);
+  }
+  @media(min-width:768px){
+    .three-item{padding:44px 36px 48px 0; border-bottom:none;}
+    .three-item + .three-item{padding-left:36px; border-left:1px solid var(--line);}
+  }
+  .three-item .num{
+    font-family:var(--eng);
+    font-style:italic;
+    font-size:15px;
+    color:var(--salmon);
+    display:block;
+    margin-bottom:14px;
+  }
+  .three-item h3{
+    font-family:var(--serif);
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:6px;
+  }
+  .three-item .who{
+    font-size:12px;
+    letter-spacing:0.1em;
+    color:var(--ink-faint);
+    margin-bottom:16px;
+  }
+  .three-item p{font-size:14px; color:var(--ink-soft); line-height:1.8;}
+
+  /* ---------- program flow ---------- */
+  .flow-grid{
+    display:grid;
+    gap:64px;
+    margin-top:8px;
+  }
+  @media(min-width:860px){ .flow-grid{grid-template-columns:1fr 1fr; gap:72px;} }
+  .flow-part .part-photo{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    margin-bottom:28px;
+  }
+  .flow-part .part-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    transition:transform .8s ease;
+  }
+  .flow-part:hover .part-photo img{transform:scale(1.025);}
+  .flow-part .part-tag{
+    font-family:var(--eng);
+    font-style:italic;
+    font-size:15px;
+    color:var(--salmon);
+    display:block;
+    margin-bottom:10px;
+  }
+  .flow-part h3{
+    font-family:var(--serif);
+    font-size:22px;
+    font-weight:500;
+    margin-bottom:8px;
+  }
+  .flow-part .dur{
+    font-size:12px;
+    letter-spacing:0.12em;
+    color:var(--ink-faint);
+    margin-bottom:20px;
+  }
+  .flow-part > p{font-size:14.5px; color:var(--ink-soft); margin-bottom:24px;}
+  .timeline{
+    border-top:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .timeline li{
+    list-style:none;
+    display:flex;
+    gap:18px;
+    padding:11px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .timeline .t{
+    color:var(--ink-faint);
+    font-variant-numeric:tabular-nums;
+    letter-spacing:0.04em;
+    flex-shrink:0;
+    width:46px;
+  }
+
+  /* ---------- artists / schedule ---------- */
+  .artist-list{border-top:1px solid var(--line-strong); margin-top:8px;}
+  .artist-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    padding:36px 0;
+    border-bottom:1px solid var(--line);
+  }
+  @media(min-width:768px){
+    .artist-row{
+      grid-template-columns:120px 1fr 220px 150px;
+      gap:36px;
+      align-items:center;
+      padding:30px 0;
+    }
+  }
+  .artist-row .date-block .d{
+    font-family:var(--eng);
+    font-size:26px;
+    line-height:1.1;
+  }
+  .artist-row .date-block .wd{
+    font-size:11.5px;
+    letter-spacing:0.18em;
+    color:var(--ink-faint);
+    margin-top:4px;
+  }
+  .artist-row .who h3{
+    font-family:var(--serif);
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:4px;
+  }
+  .artist-row .who .genre{
+    font-size:12.5px;
+    color:var(--ink-faint);
+    letter-spacing:0.06em;
+  }
+  .artist-row .who .time{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:8px;
+    font-variant-numeric:tabular-nums;
+  }
+  .artist-thumbs{
+    display:flex;
+    gap:10px;
+  }
+  .artist-thumbs .ph{
+    width:96px;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    background:var(--paper-warm);
+  }
+  .artist-thumbs .ph img{
+    width:100%; height:100%;
+    object-fit:cover;
+    filter:saturate(.96);
+    transition:transform .7s ease;
+  }
+  .artist-row:hover .artist-thumbs img{transform:scale(1.04);}
+  .artist-row .apply-cell{text-align:left;}
+  @media(min-width:768px){ .artist-row .apply-cell{text-align:right;} }
+  .apply-cell a{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    border-bottom:1px solid var(--line-strong);
+    padding-bottom:3px;
+    transition:color .2s;
+  }
+  .apply-cell a:hover{color:var(--salmon);}
+  .sched-note{
+    margin-top:28px;
+    font-size:13px;
+    color:var(--ink-faint);
+    line-height:1.9;
+  }
+
+  /* ---------- rooftop band ---------- */
+  .band{
+    position:relative;
+    overflow:hidden;
+  }
+  .band img{
+    width:100%;
+    height:clamp(420px, 72vh, 640px);
+    object-fit:cover;
+  }
+  .band .overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(20,17,14,0.78) 0%, rgba(20,17,14,0.34) 42%, rgba(20,17,14,0.04) 70%);
+    display:flex;
+    align-items:flex-end;
+  }
+  .band .overlay-inner{
+    width:100%;
+    padding:0 24px 56px;
+    max-width:1080px;
+    margin:0 auto;
+    color:#f4efe7;
+  }
+  @media(min-width:768px){ .band .overlay-inner{padding:0 48px 72px;} }
+  .band .overlay-inner .eng{
+    font-family:var(--eng);
+    font-style:italic;
+    font-size:15px;
+    letter-spacing:0.1em;
+    margin-bottom:14px;
+    color:#e8c9b4;
+  }
+  .band .overlay-inner p{
+    font-family:var(--serif);
+    font-size:clamp(20px, 3.6vw, 30px);
+    line-height:1.65;
+    font-weight:400;
+    max-width:640px;
+  }
+
+  /* ---------- for whom ---------- */
+  .for-list{
+    border-top:1px solid var(--line-strong);
+    margin-top:8px;
+    max-width:720px;
+  }
+  .for-list li{
+    list-style:none;
+    display:flex;
+    gap:22px;
+    align-items:baseline;
+    padding:19px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .for-list .idx{
+    font-family:var(--eng);
+    font-size:13px;
+    color:var(--salmon);
+    flex-shrink:0;
+  }
+
+  /* ---------- ticket ---------- */
+  .ticket-wrap{background:var(--paper-warm);}
+  .ticket-grid{
+    display:grid;
+    gap:56px;
+  }
+  @media(min-width:860px){ .ticket-grid{grid-template-columns:1fr 1fr; gap:88px;} }
+  .price-table{border-top:1px solid var(--line-strong);}
+  .price-table .row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .price-table .name{font-size:14.5px;}
+  .price-table .name small{
+    display:block;
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-top:3px;
+  }
+  .price-table .price{
+    font-family:var(--eng);
+    font-size:24px;
+    letter-spacing:0.02em;
+  }
+  .price-table .price .won{
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--ink-faint);
+    margin-left:2px;
+  }
+  .capacity-line{
+    margin-top:22px;
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex;
+    gap:10px;
+    align-items:baseline;
+  }
+  .capacity-line::before{
+    content:"";
+    width:18px; height:1px;
+    background:var(--salmon);
+    align-self:center;
+  }
+  .includes h3{
+    font-size:12px;
+    letter-spacing:0.28em;
+    color:var(--ink-faint);
+    margin-bottom:20px;
+    font-weight:600;
+  }
+  .includes ul{border-top:1px solid var(--line-strong);}
+  .includes li{
+    list-style:none;
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .ticket-cta{margin-top:48px;}
+
+  /* ---------- faq ---------- */
+  .faq-list{border-top:1px solid var(--line-strong); max-width:760px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;
+    background:none;
+    border:none;
+    text-align:left;
+    font-family:var(--sans);
+    font-size:15px;
+    color:var(--ink);
+    padding:21px 36px 21px 0;
+    cursor:pointer;
+    position:relative;
+    letter-spacing:-0.01em;
+  }
+  .faq-q::after{
+    content:"+";
+    position:absolute;
+    right:4px; top:50%;
+    transform:translateY(-50%);
+    font-family:var(--eng);
+    font-size:20px;
+    color:var(--ink-faint);
+    transition:transform .3s;
+  }
+  .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .faq-item.open .faq-a{max-height:200px;}
+  .faq-a p{
+    font-size:14px;
+    color:var(--ink-soft);
+    padding:0 0 24px;
+    max-width:620px;
+  }
+
+  /* ---------- final ---------- */
+  .final{
+    text-align:center;
+    padding:120px 0 110px;
+  }
+  .final .eng{
+    font-family:var(--eng);
+    font-style:italic;
+    font-size:16px;
+    color:var(--salmon);
+    margin-bottom:24px;
+  }
+  .final h2{
+    font-size:clamp(24px, 4.4vw, 38px);
+    margin-bottom:22px;
+  }
+  .final p{
+    color:var(--ink-soft);
+    max-width:440px;
+    margin:0 auto 42px;
+  }
+  .qr-area{
+    margin-top:64px;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+  .qr-area img{
+    width:108px; height:108px;
+    mix-blend-mode:multiply;
+    opacity:.92;
+  }
+  .qr-area span{
+    font-size:10.5px;
+    letter-spacing:0.3em;
+    color:var(--ink-faint);
+  }
+
+  footer{
+    border-top:1px solid var(--line-strong);
+    padding:44px 0 120px;
+  }
+  .footer-inner{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    line-height:2;
+  }
+  @media(min-width:768px){
+    .footer-inner{flex-direction:row; justify-content:space-between; align-items:flex-end;}
+  }
+  .footer-inner .f-brand{
+    font-family:var(--eng);
+    font-size:16px;
+    letter-spacing:0.28em;
+    color:var(--ink);
+  }
+  .footer-inner a{border-bottom:1px solid var(--line); padding-bottom:1px;}
+  .footer-inner a:hover{color:var(--salmon);}
+
+  /* ---------- sticky mobile cta ---------- */
+  .sticky-cta{
+    position:fixed;
+    bottom:0; left:0; right:0;
+    z-index:90;
+    background:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    padding-bottom:env(safe-area-inset-bottom);
+    height:calc(58px + env(safe-area-inset-bottom));
+    color:var(--paper);
+    transform:translateY(110%);
+    transition:transform .4s ease;
+  }
+  .sticky-cta.show{transform:translateY(0);}
+  .sticky-cta .info{
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    color:rgba(245,241,234,.65);
+  }
+  .sticky-cta .go{
+    font-size:13px;
+    letter-spacing:0.14em;
+    color:var(--paper);
+    display:flex; align-items:center; gap:10px;
+  }
+  .sticky-cta .go::after{content:"→";}
+  @media(min-width:768px){ .sticky-cta{display:none;} }
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="#top">GALLERY ONDO<small>갤러리온도</small></a>
+    <a class="header-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">신청하기</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="container">
+    <p class="program-eng reveal">Three Agreements — Gathering Program</p>
+    <h1 class="reveal">밤의 갤러리에서<br>만나요</h1>
+    <p class="hero-sub reveal">전시가 끝난 저녁, 갤러리의 불을 다시 켭니다.<br>작가와 관객이 작품 앞에 모여 감상을 나누고,<br>루프탑에서 와인과 함께 대화를 이어가는 밤.</p>
+    <div class="hero-meta reveal">
+      <span>2026. 7. 10 — 7. 18</span>
+      <span class="sep"></span>
+      <span>네 번의 밤</span>
+      <span class="sep"></span>
+      <span>갤러리온도</span>
+    </div>
+    <div class="reveal">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">참가 신청</a>
+    </div>
+  </div>
+  <div class="hero-visual reveal">
+    <img src="assets/view-2.jpeg" alt="《세 가지 동의》 전시 전경, 갤러리온도">
+    <p class="caption container">《세 가지 동의 Three Agreements》 전시 전경, 갤러리온도</p>
+  </div>
+</div>
+
+<!-- 01 ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-label reveal"><span class="no">01</span><span class="en">About the Night</span></div>
+    <div class="about-grid">
+      <div class="body-col reveal">
+        <h2>전시를 보고 그냥 나오는 게<br>아쉬웠던 적이 있다면</h2>
+        <p>작품 앞에서 우리는 자주 망설입니다. 좋은 것 같은데 왜 좋은지 모르겠고, 이해되지 않는데 계속 보게 되는 순간이 있습니다.</p>
+        <p>〈밤의 갤러리에서 만나요〉는 7월 단체전 《세 가지 동의 Three Agreements》와 연계해 열리는 작가 참여형 게더링입니다. 전시를 관람하는 데서 끝내지 않고, 작품 앞에서 각자의 감상과 이유를 꺼내어 하나의 작품을 여러 방향에서 바라보는 대화의 자리로 기획했습니다.</p>
+        <p>미술을 <strong>잘 아는 사람</strong>을 위한 자리가 아니라, 작품 앞에서 <strong>왜 그렇게 느꼈는지 말해보고 싶은 사람</strong>을 위한 자리입니다.</p>
+        <p class="pull">좋았다, 이상했다, 이해되지 않았다.<br>그 감상에서 대화는 시작됩니다.</p>
+      </div>
+      <aside class="about-side reveal">
+        <dl>
+          <dt>프로그램</dt><dd>밤의 갤러리에서 만나요</dd>
+          <dt>연계 전시</dt><dd>《세 가지 동의 Three Agreements》<br>2026. 7. 4 — 7. 18</dd>
+          <dt>형식</dt><dd>전시 감상 · 작가와의 대화 · 루프탑 와인 살롱</dd>
+          <dt>운영</dt><dd>총 4회 · 회차당 12명 내외, 최대 15명</dd>
+          <dt>장소</dt><dd>갤러리온도</dd>
+          <dt>참여 대상</dt><dd>미술 전문 지식이 없어도 참여 가능</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 02 THREE AGREEMENTS -->
+<section class="agree-wrap" id="concept">
+  <div class="container">
+    <div class="sec-label reveal"><span class="no">02</span><span class="en">Three Agreements</span></div>
+    <div class="body-col reveal">
+      <h2>나의 감각, 타인의 이유,<br>작품의 맥락이 만나는 자리</h2>
+      <p>《세 가지 동의》는 하나의 판단이 순간적인 감각에 머무르지 않도록, 여러 이유와 의견이 만나는 과정을 전시의 구조로 제안합니다. 이 게더링에서는 전시의 질문을 관객의 언어로 확장합니다.</p>
+    </div>
+    <div class="three-row">
+      <div class="three-item reveal">
+        <span class="num">i.</span>
+        <h3>감각</h3>
+        <p class="who">나의 것</p>
+        <p>작품을 처음 마주쳤을 때의 인상. 설명되기 전의 끌림과 낯섦, 그 첫 감각에서 대화가 시작됩니다.</p>
+      </div>
+      <div class="three-item reveal">
+        <span class="num">ii.</span>
+        <h3>이유</h3>
+        <p class="who">타인의 것</p>
+        <p>같은 작품을 두고 다른 사람이 꺼내는 전혀 다른 감상. 서로의 이유를 듣다 보면 작품은 다르게 보이기 시작합니다.</p>
+      </div>
+      <div class="three-item reveal">
+        <span class="num">iii.</span>
+        <h3>맥락</h3>
+        <p class="who">작가의 것</p>
+        <p>작가가 직접 들려주는 작업의 출발점과 과정. 세 가지가 만날 때 하나의 감상은 더 입체적인 판단이 됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PROGRAM -->
+<section id="program">
+  <div class="container">
+    <div class="sec-label reveal"><span class="no">03</span><span class="en">Program</span></div>
+    <div class="body-col reveal" style="margin-bottom:64px;">
+      <h2>이 밤은 이렇게 흘러갑니다</h2>
+      <p>강의형 프로그램이 아닙니다. 작품을 사이에 두고 작가와 관객이 서로의 이유를 나누는 대화형 감상으로 운영됩니다.</p>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-part reveal">
+        <div class="part-photo"><img src="assets/view-1.jpeg" alt="갤러리 전시 공간에서의 작품 감상"></div>
+        <span class="part-tag">Part 1 — In the Gallery</span>
+        <h3>작품 앞에서 시작하는 대화</h3>
+        <p class="dur">약 90분</p>
+        <p>전시를 자유롭게 둘러보고, 참여 작가가 직접 작업을 소개합니다. 이후 각자 마음에 남은 작품을 두고 감상과 질문을 나눕니다.</p>
+        <ul class="timeline">
+          <li><span class="t">10분</span><span>입장 및 웰컴 — 감상 카드와 노트 제공</span></li>
+          <li><span class="t">25분</span><span>전시 자유 관람</span></li>
+          <li><span class="t">15분</span><span>참여 작가 작업 소개</span></li>
+          <li><span class="t">20분</span><span>관객 감상 공유</span></li>
+          <li><span class="t">15분</span><span>작가와의 Q&amp;A</span></li>
+          <li><span class="t">5분</span><span>오늘의 세 가지 동의 정리</span></li>
+        </ul>
+      </div>
+      <div class="flow-part reveal">
+        <div class="part-photo"><img src="assets/rooftop.png" alt="루프탑 살롱의 저녁"></div>
+        <span class="part-tag">Part 2 — On the Rooftop</span>
+        <h3>루프탑 와인 살롱</h3>
+        <p class="dur">약 60분</p>
+        <p>루프탑으로 자리를 옮겨 와인과 케이터링을 함께합니다. 흩어지는 네트워킹이 아니라, 작가와 참가자가 하나의 테이블에 둘러앉는 살롱형 대화입니다.</p>
+        <ul class="timeline">
+          <li><span class="t">15분</span><span>루프탑 이동 · 와인과 케이터링 세팅</span></li>
+          <li><span class="t">20분</span><span>작가와 함께하는 테이블 토크</span></li>
+          <li><span class="t">20분</span><span>참가자 감상 공유와 자유 대화</span></li>
+          <li><span class="t">5분</span><span>마무리 — 회차별 작품 엽서 증정</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="pull reveal" style="margin-top:72px;">작품을 잘 해석하는 시간이 아니라,<br>내가 왜 그렇게 느꼈는지 함께 말해보는 시간입니다.</p>
+  </div>
+</section>
+
+<!-- ROOFTOP BAND -->
+<div class="band reveal">
+  <img src="assets/rooftop.png" alt="한여름 밤 루프탑 살롱">
+  <div class="overlay">
+    <div class="overlay-inner">
+      <p class="eng">A midsummer night salon</p>
+      <p>어색한 자기소개 대신, 작품이 먼저 질문을 던집니다.<br>서로의 감상을 듣다 보면 취향과 생각의 결이 자연스럽게 드러납니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 04 ARTISTS -->
+<section id="schedule">
+  <div class="container">
+    <div class="sec-label reveal"><span class="no">04</span><span class="en">Four Nights, Four Artists</span></div>
+    <div class="body-col reveal" style="margin-bottom:56px;">
+      <h2>네 번의 밤, 네 명의 작가</h2>
+      <p>회차마다 다른 작가가 함께합니다. 관심 있는 작가, 혹은 가능한 저녁에 맞춰 신청해 주세요.</p>
+    </div>
+
+    <div class="artist-list">
+      <div class="artist-row reveal">
+        <div class="date-block"><div class="d">7. 10</div><div class="wd">FRI · DAY 1</div></div>
+        <div class="who">
+          <h3>노해율</h3>
+          <p class="genre">키네틱 아트</p>
+          <p class="time">19:30 – 21:30</p>
+        </div>
+        <div class="artist-thumbs">
+          <div class="ph"><img src="assets/profile-noh.png" alt="노해율 작가"></div>
+          <div class="ph"><img src="assets/work-noh.jpeg" alt="노해율 작가 작품"></div>
+        </div>
+        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
+      </div>
+
+      <div class="artist-row reveal">
+        <div class="date-block"><div class="d">7. 11</div><div class="wd">SAT · DAY 2</div></div>
+        <div class="who">
+          <h3>진풀</h3>
+          <p class="genre">서양화</p>
+          <p class="time">19:00 – 21:00</p>
+        </div>
+        <div class="artist-thumbs">
+          <div class="ph"><img src="assets/profile-jin.jpeg" alt="진풀 작가"></div>
+          <div class="ph"><img src="assets/work-jin.jpeg" alt="진풀 작가 작품"></div>
+        </div>
+        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
+      </div>
+
+      <div class="artist-row reveal">
+        <div class="date-block"><div class="d">7. 17</div><div class="wd">FRI · DAY 3</div></div>
+        <div class="who">
+          <h3>김펄</h3>
+          <p class="genre">한국화</p>
+          <p class="time">19:30 – 21:30</p>
+        </div>
+        <div class="artist-thumbs">
+          <div class="ph"><img src="assets/profile-kim.jpeg" alt="김펄 작가"></div>
+          <div class="ph"><img src="assets/work-kim.jpeg" alt="김펄 작가 작품"></div>
+        </div>
+        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
+      </div>
+
+      <div class="artist-row reveal">
+        <div class="date-block"><div class="d">7. 18</div><div class="wd">SAT · DAY 4</div></div>
+        <div class="who">
+          <h3>임기원</h3>
+          <p class="genre">도자기</p>
+          <p class="time">19:00 – 21:00</p>
+        </div>
+        <div class="artist-thumbs">
+          <div class="ph"><img src="assets/profile-lim.jpeg" alt="임기원 작가"></div>
+          <div class="ph"><img src="assets/work-lim.jpeg" alt="임기원 작가 작품"></div>
+        </div>
+        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
+      </div>
+    </div>
+    <p class="sched-note reveal">회차별 참여 작가 정보와 대표 작품은 인스타그램에서도 미리 만나보실 수 있습니다.<br>각 회차는 12명 내외, 최대 15명의 소수 정원으로 운영됩니다.</p>
+  </div>
+</section>
+
+<!-- 05 FOR WHOM -->
+<section class="agree-wrap" id="for">
+  <div class="container">
+    <div class="sec-label reveal"><span class="no">05</span><span class="en">Who This Night Is For</span></div>
+    <div class="body-col reveal" style="margin-bottom:48px;">
+      <h2>이런 분께 권합니다</h2>
+    </div>
+    <ul class="for-list">
+      <li class="reveal"><span class="idx">i</span>전시를 좋아하지만, 감상이 어렵게 느껴졌던 분</li>
+      <li class="reveal"><span class="idx">ii</span>작가와 직접 이야기해보고 싶었던 분</li>
+      <li class="reveal"><span class="idx">iii</span>미술관 오프닝이나 아티스트 토크가 늘 궁금했던 분</li>
+      <li class="reveal"><span class="idx">iv</span>주말 저녁, 감도 있는 문화생활을 찾는 분</li>
+      <li class="reveal"><span class="idx">v</span>와인과 대화가 있는 조용한 살롱을 좋아하는 분</li>
+      <li class="reveal"><span class="idx">vi</span>취향이 맞는 사람들과 자연스럽게 만나고 싶은 분</li>
+      <li class="reveal"><span class="idx">vii</span>작품 구매와 컬렉팅에 관심이 생기기 시작한 분</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 06 TICKET -->
+<section class="ticket-wrap" id="ticket" style="background:var(--paper);">
+  <div class="container">
+    <div class="sec-label reveal"><span class="no">06</span><span class="en">Admission</span></div>
+    <div class="body-col reveal" style="margin-bottom:56px;">
+      <h2>참가 안내</h2>
+    </div>
+    <div class="ticket-grid">
+      <div class="reveal">
+        <div class="price-table">
+          <div class="row">
+            <span class="name">1인 참가권<small>회차 선택</small></span>
+            <span class="price">49,000<span class="won">원</span></span>
+          </div>
+          <div class="row">
+            <span class="name">2인 동반권<small>친구, 연인, 동료와 함께</small></span>
+            <span class="price">79,000<span class="won">원</span></span>
+          </div>
+          <div class="row">
+            <span class="name">4회 전체권<small>네 명의 작가를 모두 만나는 밤</small></span>
+            <span class="price">159,000<span class="won">원</span></span>
+          </div>
+        </div>
+        <p class="capacity-line">각 회차 12명 내외, 최대 15명 정원</p>
+      </div>
+      <div class="includes reveal">
+        <h3>INCLUDED</h3>
+        <ul>
+          <li>《세 가지 동의》 전시 관람</li>
+          <li>참여 작가와의 대화</li>
+          <li>루프탑 와인 살롱</li>
+          <li>와인 또는 웰컴 드링크 · 논알콜 준비</li>
+          <li>박스 케이터링</li>
+          <li>감상 노트</li>
+          <li>회차별 작품 엽서 1종</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ticket-cta reveal">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">지금 신청하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 FAQ -->
+<section id="faq" class="agree-wrap">
+  <div class="container">
+    <div class="sec-label reveal"><span class="no">07</span><span class="en">Questions</span></div>
+    <div class="body-col reveal" style="margin-bottom:48px;">
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">미술을 잘 몰라도 참여할 수 있나요?</button>
+        <div class="faq-a"><p>네. 전문 지식보다 작품 앞에서 느낀 감상과 질문을 나누는 프로그램입니다. 오히려 처음 보는 시선이 대화를 풍부하게 만듭니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">혼자 신청해도 괜찮나요?</button>
+        <div class="faq-a"><p>네. 대부분의 대화는 작품을 중심으로 시작되기 때문에 혼자 오셔도 자연스럽게 참여하실 수 있습니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">지인과 함께 신청할 수 있나요?</button>
+        <div class="faq-a"><p>네. 2인 동반권으로 신청하실 수 있습니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">와인을 마시지 않아도 되나요?</button>
+        <div class="faq-a"><p>네. 논알콜 음료도 함께 준비됩니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">비가 오면 어떻게 되나요?</button>
+        <div class="faq-a"><p>우천 또는 기상 상황에 따라 루프탑 살롱은 실내 테이블 토크로 변경될 수 있습니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">작품 구매 상담도 가능한가요?</button>
+        <div class="faq-a"><p>네. 프로그램 이후 관심 작품에 대해 갤러리 측으로 편하게 문의하실 수 있습니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<div class="final">
+  <div class="container">
+    <p class="eng reveal">See you at the gallery, after dark</p>
+    <h2 class="reveal">혼자 보면 감상,<br>함께 말하면 하나의 동의가 됩니다</h2>
+    <p class="reveal">전시를 보고 그냥 나오는 것이 아쉬웠다면,<br>작가와 관객이 함께 작품을 다시 보는 이 밤에 함께해 주세요.</p>
+    <div class="reveal">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">밤의 갤러리 신청하기</a>
+    </div>
+    <div class="qr-area reveal">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" alt="신청 QR 코드">
+      <span>SCAN TO JOIN</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <p class="f-brand">GALLERY ONDO</p>
+      <p>《세 가지 동의 Three Agreements》 연계 게더링 프로그램<br>밤의 갤러리에서 만나요 · 2026. 7. 10 — 7. 18</p>
+    </div>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">참가 신청 폼 바로가기</a></p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <span class="info">회차별 최대 15명</span>
+  <a class="go" href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">신청하기</a>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // scroll reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0, rootMargin:'0px 0px 60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // sticky CTA appears after hero
+  var hero = document.querySelector('.hero');
+  var sticky = document.getElementById('stickyCta');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > hero.offsetHeight * 0.7){ sticky.classList.add('show'); }
+    else{ sticky.classList.remove('show'); }
+  }, {passive:true});
+</script>
+</body>
+</html>
