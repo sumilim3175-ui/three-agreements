@@ -58,19 +58,14 @@
     height:60px;
   }
   .brand{
-    font-family:var(--eng);
-    font-size:17px;
-    letter-spacing:0.28em;
-    font-weight:500;
+    display:flex;
+    align-items:center;
   }
-  .brand small{
-    display:block;
-    font-family:var(--sans);
-    font-size:9px;
-    letter-spacing:0.32em;
-    color:var(--ink-faint);
-    margin-top:-2px;
+  .brand img{
+    height:22px;
+    width:auto;
   }
+  @media(min-width:768px){ .brand img{height:26px;} }
   .header-cta{
     font-size:12.5px;
     letter-spacing:0.12em;
@@ -398,23 +393,36 @@
     line-height:1.85;
     margin-bottom:24px;
   }
-  .ap-history{border-top:1px solid var(--line); margin-bottom:28px;}
-  .ap-history li{
-    list-style:none;
-    display:flex;
-    gap:16px;
-    padding:10px 0;
+  .ap-cv{border-top:1px solid var(--line-strong); margin-bottom:30px;}
+  .ap-cv .cv-block{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:10px;
+    padding:16px 0;
     border-bottom:1px solid var(--line);
+  }
+  .ap-cv .cv-label{
+    font-size:10.5px;
+    letter-spacing:0.16em;
+    color:var(--ink-faint);
+    padding-top:3px;
+    text-transform:uppercase;
+  }
+  .ap-cv ul{list-style:none;}
+  .ap-cv li{
+    display:flex;
+    gap:14px;
     font-size:13px;
     color:var(--ink-soft);
-    line-height:1.7;
+    line-height:1.75;
+    padding:2px 0;
   }
-  .ap-history .yr{
+  .ap-cv .yr{
     font-family:var(--eng);
-    font-size:13.5px;
+    font-size:14px;
     color:var(--ink);
     flex-shrink:0;
-    width:44px;
+    width:42px;
   }
   .ap-links{display:flex; gap:26px; align-items:center; flex-wrap:wrap;}
   .ap-links a{
@@ -655,10 +663,9 @@
     .footer-inner{flex-direction:row; justify-content:space-between; align-items:flex-end;}
   }
   .footer-inner .f-brand{
-    font-family:var(--eng);
-    font-size:16px;
-    letter-spacing:0.28em;
-    color:var(--ink);
+    height:24px;
+    width:auto;
+    margin-bottom:14px;
   }
   .footer-inner a{border-bottom:1px solid var(--line); padding-bottom:1px;}
   .footer-inner a:hover{color:var(--salmon);}
@@ -706,7 +713,7 @@
 
 <header>
   <div class="container header-inner">
-    <a class="brand" href="#top">GALLERY ONDO<small>갤러리온도</small></a>
+    <a class="brand" href="#top"><img src="assets/logo-ondo.png" alt="GALLERY ONDO 갤러리온도"></a>
     <a class="header-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">신청하기</a>
   </div>
 </header>
@@ -816,7 +823,7 @@
         </ul>
       </div>
       <div class="flow-part reveal">
-        <div class="part-photo"><img src="assets/rooftop.png" alt="루프탑 살롱의 저녁"></div>
+        <div class="part-photo"><img src="assets/rooftop.jpg" alt="루프탑 살롱의 저녁"></div>
         <span class="part-tag">Part 2 — On the Rooftop</span>
         <h3>루프탑 와인 살롱</h3>
         <p class="dur">약 60분</p>
@@ -835,7 +842,7 @@
 
 <!-- ROOFTOP BAND -->
 <div class="band reveal">
-  <img src="assets/rooftop.png" alt="한여름 밤 루프탑 살롱">
+  <img src="assets/rooftop.jpg" alt="한여름 밤 루프탑 살롱">
   <div class="overlay">
     <div class="overlay-inner">
       <p class="eng">A midsummer night salon</p>
@@ -858,18 +865,30 @@
       <article class="artist-profile reveal">
         <div class="ap-media">
           <div class="ap-work"><img src="assets/work-noh.jpeg" alt="노해율, 황동 키네틱 모빌 작품"></div>
-          <div class="ap-portrait"><img src="assets/profile-noh.png" alt="노해율 작가"></div>
+          <div class="ap-portrait"><img src="assets/profile-noh.jpg" alt="노해율 작가"></div>
           <p class="ap-caption">노해율, 키네틱 조각</p>
         </div>
         <div class="ap-info">
           <p class="ap-day">Day 1 — 7. 10 FRI · 19:30–21:30</p>
           <h3>노해율</h3>
           <p class="ap-genre">NOH HAEYUL · 키네틱 아트</p>
-          <p class="ap-bio">움직임을 조각의 언어로 다루는 키네틱 아티스트. 모터와 바람, 균형의 원리로 금속 조형에 미세한 진동과 리듬을 불어넣으며, 정지된 전시 공간에 살아 있는 흐름을 만들어왔습니다.</p>
-          <ul class="ap-history">
-            <li><span class="yr">연작</span><span>《Movement of Sphere》 《No Interaction》 《Layered Stroke》 《Swing》</span></li>
-            <li><span class="yr">2026</span><span>《세 가지 동의》 4인 기획전, 갤러리온도</span></li>
-          </ul>
+          <p class="ap-bio">움직임을 조각의 언어로 다루는 키네틱 아티스트. 모터와 바람, 균형의 원리로 금속 조형에 미세한 진동과 리듬을 불어넣으며, 정지된 전시 공간에 살아 있는 흐름을 만들어 왔습니다.</p>
+          <div class="ap-cv">
+            <div class="cv-block">
+              <span class="cv-label">주요 작업</span>
+              <ul>
+                <li><span class="yr"></span>《Movement of Sphere》</li>
+                <li><span class="yr"></span>《Layered Stroke》</li>
+                <li><span class="yr"></span>《No Interaction》 · 《Swing》</li>
+              </ul>
+            </div>
+            <div class="cv-block">
+              <span class="cv-label">전시</span>
+              <ul>
+                <li><span class="yr">2026</span>《세 가지 동의》 4인 기획전, 갤러리온도</li>
+              </ul>
+            </div>
+          </div>
           <div class="ap-links">
             <a class="ext" href="http://haeyul.com" target="_blank" rel="noopener">작가 홈페이지</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
@@ -887,12 +906,25 @@
           <p class="ap-day">Day 2 — 7. 11 SAT · 19:00–21:00</p>
           <h3>진풀</h3>
           <p class="ap-genre">JINPOOL · 서양화</p>
-          <p class="ap-bio">홍익대학교 일반대학원 회화과를 졸업한 회화 작가. 꿈결처럼 스쳐 간 장면과 말로 설명하기 어려운 잔상에서 작업을 시작해, 흔들리면서도 끝내 빛을 놓지 않는 마음의 순간들을 따뜻한 질감의 화면으로 옮깁니다. 해체한 과거 작품의 조각에 새 생명을 부여하는 연작 《RePot》(2017–2025)을 이어오고 있습니다.</p>
-          <ul class="ap-history">
-            <li><span class="yr">2026</span><span>개인전 《HEART AND HEARTS: 마음과 마음들》 MGFS100</span></li>
-            <li><span class="yr">2025</span><span>개인전 《우리는 여기서 반짝》 MGFS100 · 2인전 《만질 수 있는 꿈》 스페이스776</span></li>
-            <li><span class="yr">2024</span><span>개인전 《더 넓은 눈으로 보기 위한 드로잉》 갤러리온도</span></li>
-          </ul>
+          <p class="ap-bio">꿈결처럼 스쳐 간 장면과 말로 설명하기 어려운 잔상에서 작업을 시작하는 회화 작가. 흔들리면서도 끝내 빛을 놓지 않는 마음의 순간들을 따뜻한 질감의 화면으로 옮깁니다.</p>
+          <div class="ap-cv">
+            <div class="cv-block">
+              <span class="cv-label">학력</span>
+              <ul>
+                <li><span class="yr">2009</span>홍익대학교 일반대학원 회화과 졸업</li>
+                <li><span class="yr">2006</span>중앙대학교 서양화학과 졸업</li>
+              </ul>
+            </div>
+            <div class="cv-block">
+              <span class="cv-label">개인전</span>
+              <ul>
+                <li><span class="yr">2026</span>《HEART AND HEARTS》 MGFS100, 서울</li>
+                <li><span class="yr">2024</span>《안녕수집》 전시공간, 서울</li>
+                <li><span class="yr">2024</span>《Deep Sleep》 나리화랑, 서울</li>
+                <li><span class="yr">2014</span>《그림자 극장》 화봉갤러리, 서울</li>
+              </ul>
+            </div>
+          </div>
           <div class="ap-links">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
           </div>
@@ -909,11 +941,22 @@
           <p class="ap-day">Day 3 — 7. 17 FRI · 19:30–21:30</p>
           <h3>김펄</h3>
           <p class="ap-genre">KIM PEARL · 한국화</p>
-          <p class="ap-bio">한국화를 기반으로 다정한 형상들을 화면에 빚어내는 작가. 화면 가득 반복되는 선묘 위에 곰과 별, 구름 같은 존재들이 서로 기대어 있는 장면을 그립니다. 2022년부터 이어온 연작 아카이브는 작가 포트폴리오에서 만나볼 수 있습니다.</p>
-          <ul class="ap-history">
-            <li><span class="yr">2022–25</span><span>회화 연작 아카이브</span></li>
-            <li><span class="yr">2026</span><span>《세 가지 동의》 4인 기획전, 갤러리온도</span></li>
-          </ul>
+          <p class="ap-bio">한국화를 기반으로 다정한 형상들을 화면에 빚어내는 작가. 반복되는 선묘 위에 곰과 별, 구름 같은 존재들이 서로 기대어 있는 장면을 그립니다.</p>
+          <div class="ap-cv">
+            <div class="cv-block">
+              <span class="cv-label">주요 작업</span>
+              <ul>
+                <li><span class="yr"></span>종이·천에 먹 채색 회화 연작</li>
+                <li><span class="yr"></span>〈곰 두 마리〉 · 〈마주보며〉</li>
+              </ul>
+            </div>
+            <div class="cv-block">
+              <span class="cv-label">전시</span>
+              <ul>
+                <li><span class="yr">2026</span>《세 가지 동의》 4인 기획전, 갤러리온도</li>
+              </ul>
+            </div>
+          </div>
           <div class="ap-links">
             <a class="ext" href="https://artistkimpearl.myportfolio.com" target="_blank" rel="noopener">작가 포트폴리오</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
@@ -931,12 +974,22 @@
           <p class="ap-day">Day 4 — 7. 18 SAT · 19:00–21:00</p>
           <h3>임기원</h3>
           <p class="ap-genre">LIM KIWON · 도자</p>
-          <p class="ap-bio">흙 본연의 물성과 유약의 조화를 탐구하는 현대 도예가. 과한 장식을 덜어낸 담백한 비정형의 미학을 바탕으로, 흙과 불에 은(銀)과 전기 부품 같은 이질적 오브제를 융합하는 실험을 이어갑니다. 브랜드 스틸라이프(STILL LIFE)와 협업한 '내추럴 시리즈'로 일상 속 오브제 작업도 선보였습니다.</p>
-          <ul class="ap-history">
-            <li><span class="yr">2024</span><span>개인전 《NOSTALGIA》 갤러리온도</span></li>
-            <li><span class="yr">2023</span><span>교류전 《나의 빨강 너의 파랑 — 경계를 넘어》 성곡미술관</span></li>
-            <li><span class="yr">2022</span><span>기획전 《색과 조각들》 메이크폴리오</span></li>
-          </ul>
+          <p class="ap-bio">흙 본연의 물성과 유약의 조화를 탐구하는 현대 도예가. 과한 장식을 덜어낸 담백한 비정형의 미학을 바탕으로, 흙과 불에 은(銀)과 전기 부품 같은 이질적 오브제를 융합하는 실험을 이어갑니다.</p>
+          <div class="ap-cv">
+            <div class="cv-block">
+              <span class="cv-label">학력</span>
+              <ul>
+                <li><span class="yr">2011</span>홍익대학교 도예유리과 졸업</li>
+              </ul>
+            </div>
+            <div class="cv-block">
+              <span class="cv-label">개인전</span>
+              <ul>
+                <li><span class="yr">2024</span>《NOSTALGIA》 갤러리온도, 서울</li>
+                <li><span class="yr">2022</span>《반가워 코알라》 아터테인, 서울</li>
+              </ul>
+            </div>
+          </div>
           <div class="ap-links">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
           </div>
@@ -1066,7 +1119,7 @@
 <footer>
   <div class="container footer-inner">
     <div>
-      <p class="f-brand">GALLERY ONDO</p>
+      <img class="f-brand" src="assets/logo-ondo.png" alt="GALLERY ONDO 갤러리온도">
       <p>《세 가지 동의 Three Agreements》 연계 게더링 프로그램<br>밤의 갤러리에서 만나요 · 2026. 7. 10 — 7. 18</p>
     </div>
     <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">참가 신청 폼 바로가기</a></p>
