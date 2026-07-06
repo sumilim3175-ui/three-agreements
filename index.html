@@ -329,77 +329,103 @@
   }
 
   /* ---------- artists / schedule ---------- */
-  .artist-list{border-top:1px solid var(--line-strong); margin-top:8px;}
-  .artist-row{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
-    padding:36px 0;
-    border-bottom:1px solid var(--line);
-  }
-  @media(min-width:768px){
-    .artist-row{
-      grid-template-columns:120px 1fr 220px 150px;
-      gap:36px;
-      align-items:center;
-      padding:30px 0;
-    }
-  }
-  .artist-row .date-block .d{
-    font-family:var(--eng);
-    font-size:26px;
-    line-height:1.1;
-  }
-  .artist-row .date-block .wd{
-    font-size:11.5px;
-    letter-spacing:0.18em;
-    color:var(--ink-faint);
-    margin-top:4px;
-  }
-  .artist-row .who h3{
-    font-family:var(--serif);
-    font-size:20px;
-    font-weight:500;
-    margin-bottom:4px;
-  }
-  .artist-row .who .genre{
-    font-size:12.5px;
-    color:var(--ink-faint);
-    letter-spacing:0.06em;
-  }
-  .artist-row .who .time{
-    font-size:13px;
-    color:var(--ink-soft);
-    margin-top:8px;
-    font-variant-numeric:tabular-nums;
-  }
-  .artist-thumbs{
+  .artist-list{
     display:flex;
-    gap:10px;
+    flex-direction:column;
+    gap:88px;
+    border-top:1px solid var(--line-strong);
+    padding-top:72px;
+    margin-top:8px;
   }
-  .artist-thumbs .ph{
-    width:96px;
-    aspect-ratio:3/4;
+  .artist-profile{display:grid; gap:36px;}
+  @media(min-width:860px){
+    .artist-profile{grid-template-columns:0.92fr 1.08fr; gap:80px; align-items:center;}
+    .artist-profile:nth-child(even) .ap-media{order:2;}
+  }
+  .ap-media{position:relative; padding-bottom:56px;}
+  .ap-work{
+    aspect-ratio:4/5;
     overflow:hidden;
     background:var(--paper-warm);
   }
-  .artist-thumbs .ph img{
+  .ap-work img{
     width:100%; height:100%;
     object-fit:cover;
-    filter:saturate(.96);
-    transition:transform .7s ease;
+    transition:transform .9s ease;
   }
-  .artist-row:hover .artist-thumbs img{transform:scale(1.04);}
-  .artist-row .apply-cell{text-align:left;}
-  @media(min-width:768px){ .artist-row .apply-cell{text-align:right;} }
-  .apply-cell a{
+  .artist-profile:hover .ap-work img{transform:scale(1.02);}
+  .ap-portrait{
+    position:absolute;
+    bottom:0; right:20px;
+    width:36%;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    border:6px solid var(--paper);
+    background:var(--paper-warm);
+    box-shadow:0 8px 28px rgba(28,26,23,0.10);
+  }
+  .ap-portrait img{width:100%; height:100%; object-fit:cover;}
+  .ap-caption{
+    position:absolute;
+    left:0; bottom:14px;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    color:var(--ink-faint);
+    max-width:56%;
+  }
+  .ap-day{
+    font-family:var(--eng);
+    font-style:italic;
+    font-size:15px;
+    color:var(--salmon);
+    margin-bottom:14px;
+  }
+  .ap-info h3{
+    font-family:var(--serif);
+    font-size:26px;
+    font-weight:500;
+    margin-bottom:6px;
+  }
+  .ap-genre{
+    font-size:12px;
+    letter-spacing:0.18em;
+    color:var(--ink-faint);
+    margin-bottom:20px;
+  }
+  .ap-bio{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.85;
+    margin-bottom:24px;
+  }
+  .ap-history{border-top:1px solid var(--line); margin-bottom:28px;}
+  .ap-history li{
+    list-style:none;
+    display:flex;
+    gap:16px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13px;
+    color:var(--ink-soft);
+    line-height:1.7;
+  }
+  .ap-history .yr{
+    font-family:var(--eng);
+    font-size:13.5px;
+    color:var(--ink);
+    flex-shrink:0;
+    width:44px;
+  }
+  .ap-links{display:flex; gap:26px; align-items:center; flex-wrap:wrap;}
+  .ap-links a{
     font-size:12.5px;
-    letter-spacing:0.14em;
+    letter-spacing:0.12em;
     border-bottom:1px solid var(--line-strong);
     padding-bottom:3px;
     transition:color .2s;
   }
-  .apply-cell a:hover{color:var(--salmon);}
+  .ap-links a:hover{color:var(--salmon);}
+  .ap-links .ext::after{content:" ↗"; font-size:11px;}
   .sched-note{
     margin-top:28px;
     font-size:13px;
@@ -828,61 +854,95 @@
     </div>
 
     <div class="artist-list">
-      <div class="artist-row reveal">
-        <div class="date-block"><div class="d">7. 10</div><div class="wd">FRI · DAY 1</div></div>
-        <div class="who">
+
+      <article class="artist-profile reveal">
+        <div class="ap-media">
+          <div class="ap-work"><img src="assets/work-noh.jpeg" alt="노해율, 황동 키네틱 모빌 작품"></div>
+          <div class="ap-portrait"><img src="assets/profile-noh.png" alt="노해율 작가"></div>
+          <p class="ap-caption">노해율, 키네틱 조각</p>
+        </div>
+        <div class="ap-info">
+          <p class="ap-day">Day 1 — 7. 10 FRI · 19:30–21:30</p>
           <h3>노해율</h3>
-          <p class="genre">키네틱 아트</p>
-          <p class="time">19:30 – 21:30</p>
+          <p class="ap-genre">NOH HAEYUL · 키네틱 아트</p>
+          <p class="ap-bio">움직임을 조각의 언어로 다루는 키네틱 아티스트. 모터와 바람, 균형의 원리로 금속 조형에 미세한 진동과 리듬을 불어넣으며, 정지된 전시 공간에 살아 있는 흐름을 만들어왔습니다.</p>
+          <ul class="ap-history">
+            <li><span class="yr">연작</span><span>《Movement of Sphere》 《No Interaction》 《Layered Stroke》 《Swing》</span></li>
+            <li><span class="yr">2026</span><span>《세 가지 동의》 4인 기획전, 갤러리온도</span></li>
+          </ul>
+          <div class="ap-links">
+            <a class="ext" href="http://haeyul.com" target="_blank" rel="noopener">작가 홈페이지</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
+          </div>
         </div>
-        <div class="artist-thumbs">
-          <div class="ph"><img src="assets/profile-noh.png" alt="노해율 작가"></div>
-          <div class="ph"><img src="assets/work-noh.jpeg" alt="노해율 작가 작품"></div>
-        </div>
-        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
-      </div>
+      </article>
 
-      <div class="artist-row reveal">
-        <div class="date-block"><div class="d">7. 11</div><div class="wd">SAT · DAY 2</div></div>
-        <div class="who">
+      <article class="artist-profile reveal">
+        <div class="ap-media">
+          <div class="ap-work"><img src="assets/work-jin.jpeg" alt="진풀, 녹색 들풀과 빛의 회화"></div>
+          <div class="ap-portrait"><img src="assets/profile-jin.jpeg" alt="진풀 작가"></div>
+          <p class="ap-caption">진풀, 회화</p>
+        </div>
+        <div class="ap-info">
+          <p class="ap-day">Day 2 — 7. 11 SAT · 19:00–21:00</p>
           <h3>진풀</h3>
-          <p class="genre">서양화</p>
-          <p class="time">19:00 – 21:00</p>
+          <p class="ap-genre">JINPOOL · 서양화</p>
+          <p class="ap-bio">홍익대학교 일반대학원 회화과를 졸업한 회화 작가. 꿈결처럼 스쳐 간 장면과 말로 설명하기 어려운 잔상에서 작업을 시작해, 흔들리면서도 끝내 빛을 놓지 않는 마음의 순간들을 따뜻한 질감의 화면으로 옮깁니다. 해체한 과거 작품의 조각에 새 생명을 부여하는 연작 《RePot》(2017–2025)을 이어오고 있습니다.</p>
+          <ul class="ap-history">
+            <li><span class="yr">2026</span><span>개인전 《HEART AND HEARTS: 마음과 마음들》 MGFS100</span></li>
+            <li><span class="yr">2025</span><span>개인전 《우리는 여기서 반짝》 MGFS100 · 2인전 《만질 수 있는 꿈》 스페이스776</span></li>
+            <li><span class="yr">2024</span><span>개인전 《더 넓은 눈으로 보기 위한 드로잉》 갤러리온도</span></li>
+          </ul>
+          <div class="ap-links">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
+          </div>
         </div>
-        <div class="artist-thumbs">
-          <div class="ph"><img src="assets/profile-jin.jpeg" alt="진풀 작가"></div>
-          <div class="ph"><img src="assets/work-jin.jpeg" alt="진풀 작가 작품"></div>
-        </div>
-        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
-      </div>
+      </article>
 
-      <div class="artist-row reveal">
-        <div class="date-block"><div class="d">7. 17</div><div class="wd">FRI · DAY 3</div></div>
-        <div class="who">
+      <article class="artist-profile reveal">
+        <div class="ap-media">
+          <div class="ap-work"><img src="assets/work-kim.jpeg" alt="김펄, 곰과 별이 등장하는 회화"></div>
+          <div class="ap-portrait"><img src="assets/profile-kim.jpeg" alt="김펄 작가"></div>
+          <p class="ap-caption">김펄, 한국화</p>
+        </div>
+        <div class="ap-info">
+          <p class="ap-day">Day 3 — 7. 17 FRI · 19:30–21:30</p>
           <h3>김펄</h3>
-          <p class="genre">한국화</p>
-          <p class="time">19:30 – 21:30</p>
+          <p class="ap-genre">KIM PEARL · 한국화</p>
+          <p class="ap-bio">한국화를 기반으로 다정한 형상들을 화면에 빚어내는 작가. 화면 가득 반복되는 선묘 위에 곰과 별, 구름 같은 존재들이 서로 기대어 있는 장면을 그립니다. 2022년부터 이어온 연작 아카이브는 작가 포트폴리오에서 만나볼 수 있습니다.</p>
+          <ul class="ap-history">
+            <li><span class="yr">2022–25</span><span>회화 연작 아카이브</span></li>
+            <li><span class="yr">2026</span><span>《세 가지 동의》 4인 기획전, 갤러리온도</span></li>
+          </ul>
+          <div class="ap-links">
+            <a class="ext" href="https://artistkimpearl.myportfolio.com" target="_blank" rel="noopener">작가 포트폴리오</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
+          </div>
         </div>
-        <div class="artist-thumbs">
-          <div class="ph"><img src="assets/profile-kim.jpeg" alt="김펄 작가"></div>
-          <div class="ph"><img src="assets/work-kim.jpeg" alt="김펄 작가 작품"></div>
-        </div>
-        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
-      </div>
+      </article>
 
-      <div class="artist-row reveal">
-        <div class="date-block"><div class="d">7. 18</div><div class="wd">SAT · DAY 4</div></div>
-        <div class="who">
+      <article class="artist-profile reveal">
+        <div class="ap-media">
+          <div class="ap-work"><img src="assets/work-lim.jpeg" alt="임기원, 백자 도자 오브제와 조명"></div>
+          <div class="ap-portrait"><img src="assets/profile-lim.jpeg" alt="임기원 작가"></div>
+          <p class="ap-caption">임기원, 도자</p>
+        </div>
+        <div class="ap-info">
+          <p class="ap-day">Day 4 — 7. 18 SAT · 19:00–21:00</p>
           <h3>임기원</h3>
-          <p class="genre">도자기</p>
-          <p class="time">19:00 – 21:00</p>
+          <p class="ap-genre">LIM KIWON · 도자</p>
+          <p class="ap-bio">흙 본연의 물성과 유약의 조화를 탐구하는 현대 도예가. 과한 장식을 덜어낸 담백한 비정형의 미학을 바탕으로, 흙과 불에 은(銀)과 전기 부품 같은 이질적 오브제를 융합하는 실험을 이어갑니다. 브랜드 스틸라이프(STILL LIFE)와 협업한 '내추럴 시리즈'로 일상 속 오브제 작업도 선보였습니다.</p>
+          <ul class="ap-history">
+            <li><span class="yr">2024</span><span>개인전 《NOSTALGIA》 갤러리온도</span></li>
+            <li><span class="yr">2023</span><span>교류전 《나의 빨강 너의 파랑 — 경계를 넘어》 성곡미술관</span></li>
+            <li><span class="yr">2022</span><span>기획전 《색과 조각들》 메이크폴리오</span></li>
+          </ul>
+          <div class="ap-links">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a>
+          </div>
         </div>
-        <div class="artist-thumbs">
-          <div class="ph"><img src="assets/profile-lim.jpeg" alt="임기원 작가"></div>
-          <div class="ph"><img src="assets/work-lim.jpeg" alt="임기원 작가 작품"></div>
-        </div>
-        <div class="apply-cell"><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-2lg2LUTIrQ0dYo4RK9cm1IXPF82j2wLEWD7uco-qrlwPAg/viewform" target="_blank" rel="noopener">이 밤 신청하기</a></div>
-      </div>
+      </article>
+
     </div>
     <p class="sched-note reveal">회차별 참여 작가 정보와 대표 작품은 인스타그램에서도 미리 만나보실 수 있습니다.<br>각 회차는 12명 내외, 최대 15명의 소수 정원으로 운영됩니다.</p>
   </div>
